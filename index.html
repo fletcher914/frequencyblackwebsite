@@ -3,55 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Frequency Black</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+<!-- NETLIFY IDENTITY (REQUIRED FOR CMS LOGIN) -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#000;color:#fff;}
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
 
-a,a:visited,a:hover,a:active{color:#fff;text-decoration:none;}
+body{
+background:#000;
+color:#fff;
+}
 
+/* FORCE LINK COLORS */
+a,a:visited,a:hover,a:active{
+color:#fff;
+text-decoration:none;
+}
+
+/* NAV */
 nav{
-display:flex;justify-content:space-between;align-items:center;
-padding:24px 60px;border-bottom:1px solid #1a1a1a;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:24px 60px;
+border-bottom:1px solid #1a1a1a;
 }
 
-.logo{font-size:18px;letter-spacing:4px;font-weight:700;}
-.logo span{color:#C1C1C1;}
+.logo{
+font-size:18px;
+letter-spacing:4px;
+font-weight:700;
+}
 
-.tagline{font-size:10px;letter-spacing:3px;color:#008CFF;margin-top:6px;}
-.logo-wrap{display:flex;flex-direction:column;}
+.logo span{
+color:#C1C1C1;
+}
 
-nav ul{display:flex;gap:28px;list-style:none;}
-nav ul li{color:#8A8A8A;font-size:12px;cursor:pointer;}
-nav ul li:hover{color:#fff;}
+.tagline{
+font-size:10px;
+letter-spacing:3px;
+color:#008CFF;
+margin-top:6px;
+}
 
-.hero{padding:120px 20px;text-align:center;max-width:900px;margin:auto;}
-.hero h1{font-size:56px;letter-spacing:6px;margin-bottom:20px;}
-.hero p{color:#8A8A8A;max-width:600px;margin:auto;}
+.logo-wrap{
+display:flex;
+flex-direction:column;
+}
 
-.section{padding:80px 10%;}
+nav ul{
+display:flex;
+gap:28px;
+list-style:none;
+}
+
+nav ul li{
+color:#8A8A8A;
+font-size:12px;
+cursor:pointer;
+}
+
+nav ul li:hover{
+color:#fff;
+}
+
+/* HERO */
+.hero{
+padding:120px 20px;
+text-align:center;
+max-width:900px;
+margin:auto;
+}
+
+.hero h1{
+font-size:56px;
+letter-spacing:6px;
+margin-bottom:20px;
+}
+
+.hero p{
+color:#8A8A8A;
+max-width:600px;
+margin:auto;
+}
+
+/* SECTION */
+.section{
+padding:80px 10%;
+}
+
 .section h2{
-font-size:12px;letter-spacing:3px;color:#C1C1C1;
-border-left:3px solid #008CFF;padding-left:10px;margin-bottom:40px;
+font-size:12px;
+letter-spacing:3px;
+color:#C1C1C1;
+border-left:3px solid #008CFF;
+padding-left:10px;
+margin-bottom:40px;
 }
 
+/* GRID */
 .grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:40px;
 }
 
-.card img{width:100%;height:180px;object-fit:cover;margin-bottom:15px;}
-.card h3{font-size:20px;margin-bottom:8px;}
-.card p{color:#8A8A8A;}
+.card{
+cursor:pointer;
+transition:0.2s ease;
+}
 
-.card:hover h3{color:#008CFF;}
+.card:hover{
+transform:translateY(-4px);
+}
 
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+margin-bottom:15px;
+}
+
+.card h3{
+font-size:20px;
+margin-bottom:8px;
+}
+
+.card p{
+color:#8A8A8A;
+}
+
+.card:hover h3{
+color:#008CFF;
+}
+
+/* FOOTER */
 footer{
-padding:40px;text-align:center;color:#777;font-size:12px;
+padding:40px;
+text-align:center;
+color:#777;
+font-size:12px;
 border-top:1px solid #1a1a1a;
 }
 
@@ -60,6 +163,7 @@ border-top:1px solid #1a1a1a;
 
 <body>
 
+<!-- NAV -->
 <nav>
 <div class="logo-wrap">
 <div class="logo">FREQUENCY <span>BLACK</span></div>
@@ -73,11 +177,13 @@ border-top:1px solid #1a1a1a;
 </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
 <h1>THE SIGNAL OF CULTURE</h1>
 <p>Stories, music, politics, and the voices shaping the future.</p>
 </section>
 
+<!-- TRENDING -->
 <section class="section">
 <h2>TRENDING</h2>
 
@@ -104,10 +210,24 @@ border-top:1px solid #1a1a1a;
 </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
 © 2026 Frequency Black  
 A Chairman Media Company
 </footer>
+
+<!-- NETLIFY IDENTITY REDIRECT (CRITICAL) -->
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => {
+        document.location.href = "/admin/";
+      });
+    }
+  });
+}
+</script>
 
 </body>
 </html>
