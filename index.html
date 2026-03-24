@@ -3,231 +3,311 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Frequency Black</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<!-- NETLIFY IDENTITY (REQUIRED FOR CMS LOGIN) -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
 <style>
-
-/* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
+:root{
+--black:#000000;
+--charcoal:#111111;
+--blue:#008CFF;
+--white:#FFFFFF;
+--gray:#999;
 }
 
 body{
-background:#000;
-color:#fff;
+margin:0;
+font-family:Helvetica, Arial, sans-serif;
+background:var(--black);
+color:var(--white);
 }
 
-/* FORCE LINK COLORS */
-a,a:visited,a:hover,a:active{
-color:#fff;
-text-decoration:none;
+/* CONTAINER */
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
 }
 
 /* NAV */
 nav{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(0,0,0,0.9);
+backdrop-filter:blur(10px);
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:24px 60px;
-border-bottom:1px solid #1a1a1a;
+padding:20px 0;
+border-bottom:1px solid #222;
 }
 
 .logo{
-font-size:18px;
-letter-spacing:4px;
-font-weight:700;
+font-size:28px;
+letter-spacing:6px;
+font-weight:900;
 }
 
 .logo span{
-color:#C1C1C1;
+background:linear-gradient(to right,#bbb,#fff,#777);
+-webkit-background-clip:text;
+color:transparent;
 }
 
 .tagline{
-font-size:10px;
-letter-spacing:3px;
-color:#008CFF;
-margin-top:6px;
+font-size:11px;
+letter-spacing:4px;
+color:var(--blue);
+margin-top:5px;
 }
 
-.logo-wrap{
-display:flex;
-flex-direction:column;
+.menu a{
+margin-left:20px;
+color:var(--gray);
+text-decoration:none;
 }
 
-nav ul{
-display:flex;
-gap:28px;
-list-style:none;
-}
-
-nav ul li{
-color:#8A8A8A;
-font-size:12px;
-cursor:pointer;
-}
-
-nav ul li:hover{
-color:#fff;
+.menu a:hover{
+color:var(--blue);
 }
 
 /* HERO */
 .hero{
-padding:120px 20px;
-text-align:center;
-max-width:900px;
-margin:auto;
+padding:120px 0;
+border-bottom:1px solid #222;
+background:radial-gradient(circle at top, rgba(0,140,255,0.2), transparent 60%);
 }
 
 .hero h1{
-font-size:56px;
-letter-spacing:6px;
-margin-bottom:20px;
+font-size:64px;
+margin:0;
+line-height:1.1;
 }
 
 .hero p{
-color:#8A8A8A;
+color:var(--gray);
 max-width:600px;
-margin:auto;
+margin-top:15px;
+font-size:18px;
 }
 
-/* SECTION */
+/* SECTIONS */
 .section{
-padding:80px 10%;
+padding:70px 0;
 }
 
 .section h2{
-font-size:12px;
-letter-spacing:3px;
-color:#C1C1C1;
-border-left:3px solid #008CFF;
+border-left:4px solid var(--blue);
 padding-left:10px;
-margin-bottom:40px;
 }
 
 /* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:40px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:20px;
 }
 
+/* CARDS */
 .card{
-cursor:pointer;
-transition:0.2s ease;
-}
-
-.card:hover{
-transform:translateY(-4px);
+background:var(--charcoal);
+border-radius:10px;
+overflow:hidden;
+position:relative;
+transition:0.3s;
 }
 
 .card img{
 width:100%;
-height:180px;
+height:200px;
 object-fit:cover;
-margin-bottom:15px;
+opacity:0.85;
 }
 
-.card h3{
-font-size:20px;
-margin-bottom:8px;
+.card-content{
+position:absolute;
+bottom:0;
+padding:15px;
+background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
 }
 
-.card p{
-color:#8A8A8A;
+.card:hover{
+transform:translateY(-6px);
 }
 
-.card:hover h3{
-color:#008CFF;
+/* FEATURE */
+.feature{
+border-radius:12px;
+overflow:hidden;
+border:1px solid #222;
+}
+
+.feature img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.feature-content{
+padding:20px;
+}
+
+/* VIDEO */
+.video{
+background:#070707;
+padding:20px;
+border-left:3px solid var(--blue);
+}
+
+/* NEWSLETTER */
+.newsletter{
+padding:50px;
+background:var(--charcoal);
+border-top:3px solid var(--blue);
+text-align:center;
+}
+
+input{
+padding:10px;
+border:none;
+margin-right:10px;
+}
+
+button{
+padding:10px 20px;
+background:var(--blue);
+border:none;
+color:white;
 }
 
 /* FOOTER */
 footer{
-padding:40px;
 text-align:center;
-color:#777;
-font-size:12px;
-border-top:1px solid #1a1a1a;
+padding:30px;
+color:var(--gray);
+border-top:1px solid #222;
 }
-
 </style>
-</head>
 
+</head>
 <body>
+
+<div class="container">
 
 <!-- NAV -->
 <nav>
-<div class="logo-wrap">
+<div>
 <div class="logo">FREQUENCY <span>BLACK</span></div>
 <div class="tagline">A DIGITAL MEDIA COMPANY</div>
 </div>
-
-<ul>
-<li><a href="culture.html">Culture</a></li>
-<li><a href="music.html">Music</a></li>
-<li><a href="politics.html">Politics</a></li>
-</ul>
+<div class="menu">
+<a href="#">Culture</a>
+<a href="#">Music</a>
+<a href="#">Politics</a>
+</div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-<h1>THE SIGNAL OF CULTURE</h1>
-<p>Stories, music, politics, and the voices shaping the future.</p>
-</section>
+<div class="hero">
+<h1>
+Where Culture Moves.<br>
+Music Shapes.<br>
+Politics Responds.
+</h1>
+<p>
+A modern media platform covering culture, music, and power with clarity and edge.
+</p>
+</div>
+
+<!-- FEATURED -->
+<div class="section">
+<h2>FEATURED STORY</h2>
+<div class="feature">
+<img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819">
+<div class="feature-content">
+<h3>Why Atlanta Became the Capital of Black Creativity</h3>
+<p>This is your main featured article.</p>
+</div>
+</div>
+</div>
 
 <!-- TRENDING -->
-<section class="section">
+<div class="section">
 <h2>TRENDING</h2>
-
 <div class="grid">
 
-<a href="article.html" class="card">
-<img src="https://picsum.photos/400/200">
-<h3>Atlanta's Music Scene is Changing Again</h3>
-<p>The next wave is redefining sound.</p>
-</a>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2">
+<div class="card-content">
+<h3>The Rise of Independent Black Media</h3>
+<p>How creators are taking control.</p>
+</div>
+</div>
 
-<a href="article.html" class="card">
-<img src="https://picsum.photos/401/200">
-<h3>The Politics of Culture in 2026</h3>
-<p>Where policy meets culture.</p>
-</a>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d">
+<div class="card-content">
+<h3>Why Music Is Political Again</h3>
+<p>The connection between music and influence.</p>
+</div>
+</div>
 
-<a href="article.html" class="card">
-<img src="https://picsum.photos/402/200">
-<h3>New Artists You Should Know</h3>
-<p>Five rising voices reshaping hip-hop.</p>
-</a>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe">
+<div class="card-content">
+<h3>Streaming vs Ownership</h3>
+<p>The fight for control.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+<div class="card-content">
+<h3>The Future of Black Political Influence</h3>
+<p>How culture shapes decisions.</p>
+</div>
+</div>
 
 </div>
-</section>
+</div>
 
-<!-- FOOTER -->
+<!-- VIDEO -->
+<div class="section">
+<h2>FREQUENCY BLACK TV</h2>
+<div class="grid">
+<div class="video">
+<h3>Artist Interview</h3>
+<p>Video content here</p>
+</div>
+<div class="video">
+<h3>Political Breakdown</h3>
+<p>Video content here</p>
+</div>
+</div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+<h2>Join the Signal</h2>
+<p>Get updates from Frequency Black</p>
+<input placeholder="Email address">
+<button>Subscribe</button>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+<h2>ABOUT US</h2>
+<p style="max-width:700px;color:#999;">
+Frequency Black is a digital media company focused on culture, music, and politics.
+</p>
+</div>
+
 <footer>
-© 2026 Frequency Black  
-A Chairman Media Company
+Frequency Black © 2026
 </footer>
 
-<!-- NETLIFY IDENTITY REDIRECT (CRITICAL) -->
-<script>
-if (window.netlifyIdentity) {
-  window.netlifyIdentity.on("init", user => {
-    if (!user) {
-      window.netlifyIdentity.on("login", () => {
-        document.location.href = "/admin/";
-      });
-    }
-  });
-}
-</script>
+</div>
 
 </body>
 </html>
