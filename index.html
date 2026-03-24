@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Frequency Black</title>
 
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 :root{
 --black:#000000;
@@ -14,14 +17,14 @@
 --gray:#999;
 }
 
+/* BASE */
 body{
 margin:0;
-font-family:Raleway;
+font-family:'Raleway', sans-serif;
 background:var(--black);
 color:var(--white);
 }
 
-/* CONTAINER */
 .container{
 max-width:1200px;
 margin:auto;
@@ -43,9 +46,9 @@ border-bottom:1px solid #222;
 }
 
 .logo{
-font-size:28px;
-letter-spacing:6px;
-font-weight:900;
+font-family:'Bebas Neue', sans-serif;
+font-size:34px;
+letter-spacing:4px;
 }
 
 .logo span{
@@ -65,6 +68,7 @@ margin-top:5px;
 margin-left:20px;
 color:var(--gray);
 text-decoration:none;
+font-size:14px;
 }
 
 .menu a:hover{
@@ -73,21 +77,25 @@ color:var(--blue);
 
 /* HERO */
 .hero{
-padding:120px 0;
+padding:140px 0;
 border-bottom:1px solid #222;
 background:radial-gradient(circle at top, rgba(0,140,255,0.2), transparent 60%);
 }
 
 .hero h1{
-font-size:64px;
+font-family:'Bebas Neue', sans-serif;
+font-size:80px;
+line-height:0.95;
+letter-spacing:2px;
+text-transform:uppercase;
+max-width:900px;
 margin:0;
-line-height:1.1;
 }
 
 .hero p{
 color:var(--gray);
 max-width:600px;
-margin-top:15px;
+margin-top:20px;
 font-size:18px;
 }
 
@@ -97,6 +105,9 @@ padding:70px 0;
 }
 
 .section h2{
+font-family:'Bebas Neue', sans-serif;
+letter-spacing:2px;
+font-size:28px;
 border-left:4px solid var(--blue);
 padding-left:10px;
 }
@@ -129,7 +140,21 @@ opacity:0.85;
 position:absolute;
 bottom:0;
 padding:15px;
-background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+background:linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+width:100%;
+}
+
+.card h3{
+font-family:'Bebas Neue', sans-serif;
+font-size:22px;
+letter-spacing:1px;
+margin:0;
+}
+
+.card p{
+font-size:14px;
+margin-top:5px;
+color:#ccc;
 }
 
 .card:hover{
@@ -153,6 +178,12 @@ object-fit:cover;
 padding:20px;
 }
 
+.feature h3{
+font-family:'Bebas Neue', sans-serif;
+font-size:28px;
+margin:0;
+}
+
 /* VIDEO */
 .video{
 background:#070707;
@@ -162,23 +193,31 @@ border-left:3px solid var(--blue);
 
 /* NEWSLETTER */
 .newsletter{
-padding:50px;
+padding:60px;
 background:var(--charcoal);
 border-top:3px solid var(--blue);
 text-align:center;
 }
 
+.newsletter h2{
+font-family:'Bebas Neue', sans-serif;
+font-size:36px;
+letter-spacing:2px;
+}
+
 input{
-padding:10px;
+padding:12px;
 border:none;
 margin-right:10px;
+width:250px;
 }
 
 button{
-padding:10px 20px;
+padding:12px 25px;
 background:var(--blue);
 border:none;
 color:white;
+cursor:pointer;
 }
 
 /* FOOTER */
@@ -187,10 +226,19 @@ text-align:center;
 padding:30px;
 color:var(--gray);
 border-top:1px solid #222;
+font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.hero h1{
+font-size:48px;
+}
 }
 </style>
 
 </head>
+
 <body>
 
 <div class="container">
@@ -220,9 +268,9 @@ A modern media platform covering culture, music, and power with clarity and edge
 </p>
 </div>
 
-<!-- FEATURED -->
+<!-- FEATURE -->
 <div class="section">
-<h2>FEATURED STORY</h2>
+<h2>Featured Story</h2>
 <div class="feature">
 <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819">
 <div class="feature-content">
@@ -234,7 +282,7 @@ A modern media platform covering culture, music, and power with clarity and edge
 
 <!-- TRENDING -->
 <div class="section">
-<h2>TRENDING</h2>
+<h2>Trending</h2>
 <div class="grid">
 
 <div class="card">
@@ -274,7 +322,7 @@ A modern media platform covering culture, music, and power with clarity and edge
 
 <!-- VIDEO -->
 <div class="section">
-<h2>FREQUENCY BLACK TV</h2>
+<h2>Frequency Black TV</h2>
 <div class="grid">
 <div class="video">
 <h3>Artist Interview</h3>
@@ -297,7 +345,7 @@ A modern media platform covering culture, music, and power with clarity and edge
 
 <!-- ABOUT -->
 <div class="section">
-<h2>ABOUT US</h2>
+<h2>About Us</h2>
 <p style="max-width:700px;color:#999;">
 Frequency Black is a digital media company focused on culture, music, and politics.
 </p>
